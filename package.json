@@ -1,0 +1,34 @@
+{
+  "name": "mm-database",
+  "version": "1.0.0",
+  "description": "Resarch authentic metronome numbers and compare their interpretation in whole beat and single beat.",
+  "main": "index.js",
+  "scripts": {
+    "build:public": "cd public/app && npm run build",
+    "start:public": "cd public/app && npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennithnichol/mm-database.git"
+  },
+  "keywords": [
+    "mmdb",
+    "wholebeat",
+    "metronome",
+    "database"
+  ],
+  "author": "Kennith Nichol <ken.nichol@live.ca>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kennithnichol/mm-database/issues"
+  },
+  "homepage": "https://github.com/kennithnichol/mm-database#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/node": "^14.0.14"
+  },
+  "dependencies": {
+    "express-rate-limit": "^5.1.3"
+  }
+}

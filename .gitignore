@@ -4,3 +4,6 @@ npm-debug.log
 .DS_Store
 [Tt]humbs.db
 /templates
+
+# Local Netlify folder
+.netlify

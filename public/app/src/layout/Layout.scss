@@ -1,0 +1,11 @@
+.app-layout {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    &-inner {
+        background: #f9f9f9;
+        border-radius: 0.25rem;
+    }
+}

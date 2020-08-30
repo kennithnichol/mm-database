@@ -3,7 +3,7 @@ export interface IGuardResult {
     message?: string;
 }
 
-export interface IGUardArgument {
+export interface IGuardArgument {
     argument: any;
     argumentName: string;
 }

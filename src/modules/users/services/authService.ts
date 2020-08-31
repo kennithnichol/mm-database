@@ -1,10 +1,13 @@
+import { RefreshToken, JWTClaims, JWTToken } from "../domain/jwt";
+import { User } from "../domain/user";
+
 export interface IAuthService {
-    signJWT (props: any): any;
-    decodeJWT (token: any): Promise<any>;
-    createRefreshToken (): any;
+    signJWT (props: JWTClaims): JWTToken;
+    decodeJWT (token: string): Promise<JWTClaims>;
+    createRefreshToken (): RefreshToken;
     getTokens (username: string): Promise<string[]>;
-    saveAuthenticatedUser (user: any): Promise<void>;
+    saveAuthenticatedUser (user: User): Promise<void>;
     deAuthenticateUser (username: string): Promise<void>;
-    refreshTokenExists (refreshToken: any): Promise<boolean>;
-    getUserNameFromRefreshToken (refreshToken: any): Promise<string>;
+    refreshTokenExists (refreshToken: RefreshToken): Promise<boolean>;
+    getUserNameFromRefreshToken (refreshToken: RefreshToken): Promise<string>;
 }

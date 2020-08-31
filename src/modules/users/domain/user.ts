@@ -1,15 +1,17 @@
 import { UserId } from './userId';
 import { UserName } from './UserName';
+import { UserEmail } from './UserEmail';
 import { JWTToken, RefreshToken } from './jwt';
 import { UniqueEntityID } from '../../../shared/domain/UniqueEntityID';
 import { Result } from '../../../shared/core/Result';
 import { Guard } from '../../../shared/core/Guard';
 import { AggregateRoot } from '../../../shared/domain/AggregateRoot';
+import { UserPassword } from './userPassword';
 
 interface UserProps {
-    email: string;
+    email: UserEmail;
     username: UserName;
-    password: string;
+    password: UserPassword;
     isEmailVerified?: boolean;
     isAdminUser?: boolean;
     accessToken?: JWTToken;
@@ -25,20 +27,20 @@ export class User extends AggregateRoot<UserProps> {
             .getValue();
     }
 
-    get email (): string {
-        return 'email';
+    get email (): UserEmail {
+        return this.props.email;
     }
 
     get username (): UserName {
         return this.props.username;
     }
 
-    get password () : string {
-        return 'p@55w0rd';
+    get password () : UserPassword {
+        return this.props.password;
     }
 
     get accessToken (): JWTToken {
-        return '';
+        return this.props.accessToken;
     }
 
     get isDeleted (): boolean {

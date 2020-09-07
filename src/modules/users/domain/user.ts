@@ -7,6 +7,9 @@ import { Result } from '../../../shared/core/Result';
 import { Guard } from '../../../shared/core/Guard';
 import { AggregateRoot } from '../../../shared/domain/AggregateRoot';
 import { UserPassword } from './userPassword';
+import { UserLoggedIn } from './events/userLoggedIn';
+import { UserDeleted } from './events/userDeleted';
+import { UserCreated } from './events/userCreated';
 
 interface UserProps {
     email: UserEmail;
@@ -68,7 +71,7 @@ export class User extends AggregateRoot<UserProps> {
     }
 
     public setAccessToken (token: JWTToken, refreshToken: RefreshToken): void {
-        // this.addDomainEvent(new UserLoggedIn(this));
+        this.addDomainEvent(new UserLoggedIn(this));
         this.props.accessToken = token;
         this.props.refreshToken = refreshToken;
         this.props.lastLogin = new Date();
@@ -76,7 +79,7 @@ export class User extends AggregateRoot<UserProps> {
 
     public delete (): void {
         if (!this.props.isDeleted) {
-            // this.addDomainEvent(new UserDeleted(this));
+            this.addDomainEvent(new UserDeleted(this));
             this.props.isDeleted = true;
         }
     }
@@ -104,7 +107,7 @@ export class User extends AggregateRoot<UserProps> {
         }, id);
 
         if (isNewUser) {
-            // user.addDomainEvent(new UserCreated(user));
+            user.addDomainEvent(new UserCreated(user));
         }
 
         return Result.ok<User>(user);

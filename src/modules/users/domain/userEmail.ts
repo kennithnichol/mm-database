@@ -24,7 +24,7 @@ export class UserEmail extends ValueObject<UserEmailProps> {
         return email.trim().toLowerCase();
     }
 
-    private static create (email: string): Result<UserEmail> {
+    public static create (email: string): Result<UserEmail> {
         if (!this.isValidEmail(email)) {
             return Result.fail<UserEmail>('Email address not valid');
         } else {

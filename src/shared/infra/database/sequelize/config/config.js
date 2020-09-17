@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const Sequelize = require('sequelize');
 
 const {
@@ -19,21 +19,21 @@ const databaseCredentials = {
         'password': MMDB_PASS,
         'database': MMDB_DEV_DB_NAME,
         'host': MMDB_HOST,
-        'dialect': 'mysql'
+        'dialect': 'postgres'
     },
     'test': {
         'username': MMDB_USER,
         'password': MMDB_PASS,
         'database': MMDB_TEST_DB_NAME,
         'host': MMDB_HOST,
-        'dialect': 'mysql'
+        'dialect': 'postgres'
     },
     'production': {
         'username': MMDB_USER,
         'password': MMDB_PASS,
         'database': MMDB_PROD_DB_NAME,
         'host': MMDB_HOST,
-        'dialect': 'mysql'
+        'dialect': 'postgres'
     }
 };
 
@@ -52,7 +52,7 @@ module.exports.connection = MMDB_IS_PRODUCTION === 'true'
     : new Sequelize(database, username, password, {
         host,
         dialect,
-        port: 3306,
+        port: 5432,
         dialectOptions: {
             multipleStatements: true,
         },

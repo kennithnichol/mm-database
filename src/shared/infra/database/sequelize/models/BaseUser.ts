@@ -40,7 +40,7 @@ export default (sequelize, DataTypes) => {
         underscored: true,
         tableName: 'base_user',
         indexes: [
-            { unique: true, filed: ['user_email'] },
+            { unique: true, fields: ['user_email'] },
         ]
     });
 

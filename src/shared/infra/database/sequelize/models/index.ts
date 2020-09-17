@@ -27,9 +27,9 @@ const createModels = () => {
 
     const modelsList = fs.readdirSync(path.resolve(__dirname, './'))
         .filter((t) => (~t.indexOf('.ts') || ~t.indexOf('.js')) && !~t.indexOf("index") && !~t.indexOf('.map'))
-        .map((model) => sequelize.import(__dirname + '/' + model))
+        .map((model) => require(__dirname + '/' + model).default(sequelize, Sequelize))
 
-    for (let i = 0; i < models.length; i++) {
+    for (let i = 0; i < modelsList.length; i++) {
         const modelName = toCamelCase(modelsList[i].name);
         models[modelName] = modelsList[i];
     }

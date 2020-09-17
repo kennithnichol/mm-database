@@ -26,8 +26,8 @@ export default (sequelize, DataTypes) => {
     });
 
     Member.associate = (models) => {
-        Member.belongsto(models.BaseUser, { foreignKey: 'member_base_id', targetKey: 'base_user_id', as: 'BaseUser' })
-        Member.hasMany(models.Post, { foreignKey: 'member_id', as: 'Post' })
+        Member.belongsTo(models.BaseUser, { foreignKey: 'member_base_id', targetKey: 'base_user_id', as: 'BaseUser' })
+        // Member.hasMany(models.Post, { foreignKey: 'member_id', as: 'Post' })
     }
 
     return Member;

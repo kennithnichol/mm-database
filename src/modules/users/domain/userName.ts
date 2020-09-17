@@ -33,5 +33,7 @@ export class UserName extends ValueObject<UserNameProps> {
         if (!maxLengthResult.succeded) {
             return Result.fail<UserName>(maxLengthResult.message);
         }
+
+        return Result.ok<UserName>(new UserName(props))
     }
 }

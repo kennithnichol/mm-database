@@ -1,6 +1,5 @@
 import React from 'react';
 import { Logo } from '..';
-import '../styles/Header.scss'
 
 interface HeaderProps {
     title: string;

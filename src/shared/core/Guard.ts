@@ -17,6 +17,33 @@ export class Guard {
         }
     }
 
+    public static greaterThan (minValue: number, actualValue: number): IGuardResult {
+        return actualValue > minValue
+            ? { succeded: true }
+            : {
+                succeded: false,
+                message: `Number given {${actualValue}} is not greater than {${minValue}}.`
+        }
+    }
+
+    public static againstAtLeast (numChars: number, text: string): IGuardResult {
+        return text.length >=  numChars
+            ? { succeded: true }
+            : {
+                succeded: false,
+                message: `Text is not at least {${numChars}} chars.`
+        }
+    }
+
+    public static againstAtMost (numChars: number, text: string): IGuardResult {
+        return text.length <=  numChars
+            ? { succeded: true }
+            : {
+                succeded: false,
+                message: `Text is greater than {${numChars}} chars.`
+        }
+    }
+
     public static againstNullOrUndefined (argument: any, argumentName: string): IGuardResult {
         if (argument === null || argument === undefined) {
             return { succeded: false, message: `${argumentName} is null or undefined` }

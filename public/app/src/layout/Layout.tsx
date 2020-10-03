@@ -1,6 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet'
-import './Layout.scss'
+import { Helmet } from 'react-helmet'
 import { siteMetaData } from '../config/siteMetaData'
 
 interface LayoutProps {

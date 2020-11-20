@@ -6,6 +6,8 @@
   "scripts": {
     "build:public": "cd public/app && npm run build",
     "start:public": "cd public/app && npm run start",
+    "build:admin": "cd public/admin && npm run build",
+    "start:admin": "cd public/admin && npm run start",
     "build": "rimraf ./dist && tsc",
     "db:create:dev": "cross-env NODE_ENV=development node scripts/db/create",
     "db:create:test": "cross-env NODE_ENV=test node scripts/db/create",
@@ -19,6 +21,7 @@
     "migrate:prod": "sequelize db:migrate --env production",
     "start:dev": "cross-env NODE_ENV=development nodemon",
     "start:both": "concurrently --kill-others-on-fail \"npm run start:dev\" \"npm run start:public\"",
+    "start:all": "concurrently --kill-others-on-fail \"npm run start:dev\" \"npm run start:public\" \"npm run start:admin\"",
     "prestart": "npm run migrate:prod",
     "start": "node dist/index",
     "test": "jest",

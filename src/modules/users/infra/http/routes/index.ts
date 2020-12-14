@@ -3,6 +3,8 @@ import { middleware } from '../../../../../shared/infra/http';
 import { createUserController } from '../../../useCases/createUser';
 import { getCurrentUserController } from '../../../useCases/getCurrentUser';
 import { getUserByUserName, getUserByUserNameController } from '../../../useCases/getUserByUserName';
+import { loginController } from '../../../useCases/login';
+import { logoutController } from '../../../useCases/logout';
 
 const userRouter = express.Router();
 
@@ -13,6 +15,14 @@ userRouter.post('/',
 userRouter.get('/me',
 	middleware.ensureAuthenticated(),
 	(req, res) => getCurrentUserController.execute(req, res)
+)
+
+userRouter.post('/login',
+	(req, res) => loginController.execute(req, res)
+)
+
+userRouter.post('/logout',
+	(req, res) => logoutController.execute(req, res)
 )
 
 userRouter.get('/:username',

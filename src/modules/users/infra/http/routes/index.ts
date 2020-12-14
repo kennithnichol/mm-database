@@ -5,6 +5,7 @@ import { getCurrentUserController } from '../../../useCases/getCurrentUser';
 import { getUserByUserName, getUserByUserNameController } from '../../../useCases/getUserByUserName';
 import { loginController } from '../../../useCases/login';
 import { logoutController } from '../../../useCases/logout';
+import { refreshAccessTokenController } from '../../../useCases/refreshAccessToken';
 
 const userRouter = express.Router();
 
@@ -23,6 +24,10 @@ userRouter.post('/login',
 
 userRouter.post('/logout',
 	(req, res) => logoutController.execute(req, res)
+)
+
+userRouter.post('/token/refresh',
+	(req, res) => refreshAccessTokenController.execute(req, res)
 )
 
 userRouter.get('/:username',

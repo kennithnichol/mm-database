@@ -19,7 +19,7 @@
     "migrate:dev": "npm run build && cross-env NODE_ENV=development sequelize db:migrate",
     "migrate:test": "npm run build && cross-env NODE_ENV=test sequelize db:migrate --env test",
     "migrate:prod": "sequelize db:migrate --env production",
-    "start:dev": "cross-env NODE_ENV=development nodemon",
+    "start:dev": "cross-env NODE_ENV=development nodemon -L",
     "start:both": "concurrently --kill-others-on-fail \"npm run start:dev\" \"npm run start:public\"",
     "start:all": "concurrently --kill-others-on-fail \"npm run start:dev\" \"npm run start:public\" \"npm run start:admin\"",
     "prestart": "npm run migrate:prod",

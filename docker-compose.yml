@@ -10,11 +10,11 @@ services:
       - 3000:3000
       - 5000:5000
     environment:
-      - MMDB_APP_SECRET=${MMDB_APP_SECRET}
-      - MMDB_APP_REDIS_URL=mmdb_redis
-      - MMDB_APP_REDIS_PORT=6379
-      - MMDB_APP_DB_HOST=mmdb_postgres
-      - MMDB_APP_DEV_DB_NAME=${MMDB_DEV_DB_NAME}
+      - MMDB_SECRET=${MMDB_SECRET}
+      - MMDB_REDIS_URL=mmdb_redis
+      - MMDB_REDIS_PORT=6379
+      - MMDB_HOST=mmdb_postgres
+      - MMDB_DEV_DB_NAME=${MMDB_DEV_DB_NAME}
     depends_on:
       - postgres
       - redis
@@ -27,7 +27,7 @@ services:
     environment:
       - POSTGRES_USER=${MMDB_USER}
       - POSTGRES_DB=${MMDB_DEV_DB_NAME}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PASSWORD=${MMDB_PASS}
 
   redis:
     container_name: mmdb_redis

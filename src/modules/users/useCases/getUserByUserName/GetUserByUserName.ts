@@ -1,7 +1,7 @@
 import { GetUserByUserNameDTO } from "./GetUserByUserNameDTO";
 import { GetUserByUserNameErrors } from "./GetUserByUserNameErrors";
 import { left, right, Result, Either } from "../../../../shared/core/Result";
-import { UserName } from "../../domain/UserName";
+import { UserName } from "../../domain/userName";
 import { IUserRepo } from "../../repos/userRepo";
 import { UseCase } from "../../../../shared/core/UseCase";
 import { AppError } from "../../../../shared/core/AppError";

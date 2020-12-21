@@ -1,9 +1,9 @@
 import { Mapper } from '../../../shared/infra/Mapper';
 import { User } from '../domain/user';
 import { UserDTO } from '../dtos/userDTO';
-import { UserName } from '../domain/UserName';
+import { UserName } from '../domain/userName';
 import { UserPassword } from '../domain/userPassword';
-import { UserEmail } from '../domain/UserEmail';
+import { UserEmail } from '../domain/userEmail';
 import { UniqueEntityID } from '../../../shared/domain/UniqueEntityID';
 
 export class UserMap implements Mapper<User> {

@@ -1,6 +1,6 @@
 import { UserId } from './userId';
-import { UserName } from './UserName';
-import { UserEmail } from './UserEmail';
+import { UserName } from './userName';
+import { UserEmail } from './userEmail';
 import { JWTToken, RefreshToken } from './jwt';
 import { UniqueEntityID } from '../../../shared/domain/UniqueEntityID';
 import { Result } from '../../../shared/core/Result';

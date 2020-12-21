@@ -3,7 +3,7 @@ import { Result, Either, left, right } from "../../../../shared/core/Result";
 import { UseCase } from "../../../../shared/core/UseCase";
 import { JWTToken, RefreshToken } from "../../domain/jwt";
 import { User } from "../../domain/user";
-import { UserName } from "../../domain/UserName";
+import { UserName } from "../../domain/userName";
 import { UserPassword } from "../../domain/userPassword";
 import { IUserRepo } from "../../repos/userRepo";
 import { IAuthService } from "../../services/authService";

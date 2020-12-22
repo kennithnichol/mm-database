@@ -29,11 +29,12 @@ const databaseCredentials = {
         'dialect': 'postgres'
     },
     'production': {
-        'username': MMDB_USER,
-        'password': MMDB_PASS,
-        'database': MMDB_PROD_DB_NAME,
-        'host': MMDB_HOST,
-        'dialect': 'postgres'
+        // 'username': MMDB_USER,
+        // 'password': MMDB_PASS,
+        // 'database': MMDB_PROD_DB_NAME,
+        // 'host': MMDB_HOST,
+        // 'dialect': 'postgres'
+        "use_env_variable": "DATABASE_URL"
     }
 };
 

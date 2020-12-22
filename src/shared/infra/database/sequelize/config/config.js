@@ -47,9 +47,7 @@ const mode = MMDB_IS_PRODUCTION === 'true' ? 'prod' : 'dev';
 
 console.log(`[DB]: Connection to the database in ${mode} mode.`)
 
-module.exports.connection = MMDB_IS_PRODUCTION === 'true'
-    ? new Sequelize(DATABASE_URL)
-    : new Sequelize(database, username, password, {
+module.exports.connection = MMDB_IS_PRODUCTION === 'true' ? new Sequelize(DATABASE_URL) : new Sequelize(database, username, password, {
         host,
         dialect,
         port: 5432,
